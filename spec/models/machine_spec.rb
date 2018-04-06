@@ -13,7 +13,8 @@ describe Machine do
       expect(machine).to respond_to(:snacks)
     end
     it "should belong to snacks" do
-      machine = Machine.create(location: "Denver" )
+      snack = Snack.create(name: "Cheetohs", price: 5)
+      machine = snack.machines.create(location: "Denver" )
 
       expect(machine).to respond_to(:snack)
     end
